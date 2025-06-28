@@ -12,7 +12,7 @@ A CLI and open-source utility made to make it easier to create Minecraft servers
 
 ## Installation
 
-###Requirements:
+### Requirements:
 - A capable computer (check https://minecraft.wiki/w/Tutorial:Setting_up_a_Java_Edition_server for more info)
 - Linux
 - Java 21
@@ -24,3 +24,30 @@ A CLI and open-source utility made to make it easier to create Minecraft servers
    sudo apt install openjdk-21-jdk
 ```
 2 - Download the script:
+```bash
+   wget (URL)
+```
+3 - Make in executable:
+```bash
+   chmod +x main.sh
+```
+4 - Run the script:
+```bash
+   ./msms.sh
+```
+## Usage:
+
+1 - Start server - Launch an existing server with custom RAM allocation
+
+2 - Create server - Set up a new server (choose between Paper or Vanilla)
+
+3 - Manage server - Configure:
+
+- Server name (motd)
+
+- Render distance (view-distance)
+
+- Simulation distance
+
+- Exit - Quit the program
+
