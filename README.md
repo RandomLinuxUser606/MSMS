@@ -1,6 +1,10 @@
 # MSMS - Minecraft Server Made Simple
 A CLI and open-source utility made to make it easier to create Minecraft servers.
 
+![New Piskel(1)](https://github.com/user-attachments/assets/af365bb6-8207-46e9-b1a7-bfde52cb4dc2)
+
+
+
 ## Features:
 
 - Automatic server creation (Paper or Vanilla)
