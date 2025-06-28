@@ -13,6 +13,7 @@ A CLI and open-source utility made to make it easier to create Minecraft servers
 - View-distance and simulation-distance control
 - Automatic EULA acceptance
 - Simplified configuration management
+- Easy plugin management
 
 ## Installation
 
