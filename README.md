@@ -18,7 +18,7 @@ A CLI and open-source utility made to make it easier to create Minecraft servers
 ## Installation
 
 ### Requirements:
-- A capable computer (check https://minecraft.wiki/w/Tutorial:Setting_up_a_Java_Edition_server for more info)
+- A capable computer (check https://minecraft.wiki/w/Server/Requirements for more info)
 - Linux
 - Java 21
 - wget installed
@@ -54,5 +54,10 @@ A CLI and open-source utility made to make it easier to create Minecraft servers
 
 - Simulation distance
 
-- Exit - Quit the program
+- Plugin management
+
+- Max player count
+
+![2025-06-29-192219_hyprshot](https://github.com/user-attachments/assets/5bb5bb17-a4fb-4553-9bca-203998231440)
+
 
