@@ -1,7 +1,13 @@
 #!/bin/bash
+<<<<<<< HEAD
 # By RandomLinuxUser606, version 0.1.
 
 echo "MSMS - v0.1"
+=======
+# By RandomLinuxUser606, version 0.1
+
+echo "MSMS - Version 0.1"
+>>>>>>> main
 echo "A CLI and open-source utility to simplify creating"
 echo "and managing a Minecraft server."
 echo
