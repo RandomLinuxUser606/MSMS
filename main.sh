@@ -108,7 +108,13 @@ elif [ "$resposta" = '3' ]; then
       read plugop
 
       if [ "$plugop" = '1' ]; then
-        ./plugins.sh
+        PASTA_DO_SCRIPT="$(cd "$(dirname "$0")" && pwd)"
+        PLUGINS="$PASTA_DO_SCRIPT/plugins"
+
+        echo "Enter the Java plugin file path here to install it automatically"
+        read caminho
+
+        mv "$caminho" "$PLUGINS"
       elif [ "$plugop" = '2' ]; then
         echo "These are the installed plugins. Enter the .jar filename to delete it."
         cd plugins
