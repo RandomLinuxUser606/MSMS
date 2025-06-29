@@ -30,7 +30,7 @@ A CLI and open-source utility made to make it easier to create Minecraft servers
 ```
 2 - Download the script:
 ```bash
-   wget (URL)
+   wget https://github.com/RandomLinuxUser606/MSMS
 ```
 3 - Make in executable:
 ```bash
