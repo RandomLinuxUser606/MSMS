@@ -54,5 +54,10 @@ A CLI and open-source utility made to make it easier to create Minecraft servers
 
 - Simulation distance
 
-- Exit - Quit the program
+- Plugin management
+
+- Max player count
+
+![2025-06-29-192219_hyprshot](https://github.com/user-attachments/assets/5bb5bb17-a4fb-4553-9bca-203998231440)
+
 
