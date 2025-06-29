@@ -72,6 +72,7 @@ elif [ "$resposta" = '3' ]; then
     echo "2 - Rendered chunks"
     echo "3 - Simulated chunks"
     echo "4 - Manage plugins"
+    echo "5 - Max player count"
     read gerenciar
 
     if [ "$gerenciar" = '1' ]; then
@@ -117,6 +118,11 @@ elif [ "$resposta" = '3' ]; then
       else
         echo "Please enter a valid option!"
       fi
+
+    elif [ "$gerenciar" = '5' ]; then
+      echo "What limit do you want?"
+      read limite
+      sed -i "s/max-players=.*/max-players=$limite/" server.properties
     else
       echo "Invalid option!"
     fi
