@@ -107,12 +107,15 @@ elif [ "$resposta" = '3' ]; then
       read plugop
 
       if [ "$plugop" = '1' ]; then
-        if [ -f "../plugins.sh" ]; then
-          chmod +x ../plugins.sh
-          ../plugins.sh
-        else
-          echo "Erro: arquivo plugins.sh nao encontrado!"
-        fi
+        ./plugins.sh
+      elif [ "$plugop" = '2' ]; then
+        echo "Esses sao os plugins instalados, escreva o nome do arquivo .jar do plugin para deleta-lo."
+        cd plugins
+        ls
+        read deletar
+        rm "$deletar"
+      else
+        echo "Digite algo valido!"
       fi
     else
       echo "Opcao invalida!"
