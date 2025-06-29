@@ -1,9 +1,9 @@
 #!/bin/bash
 # By RandomLinuxUser606
 
-echo MSMS - Testing
-echo A CLI and open-source CLI utility made to make it easier to create
-echo and manage a Minecraft server.
+echo "MSMS - Testing"
+echo "A CLI and open-source utility to simplify creating"
+echo "and managing a Minecraft server."
 echo
 echo "###################################"
 echo "Minecraft Server Made Simple (MSMS)"
@@ -18,18 +18,18 @@ read resposta
 if [ "$resposta" = '1' ]; then
   if [ -d "server" ]; then
     cd server
-    echo 'Quanta RAM voce quer alocar para o servidor? (em GB)'
+    echo 'How much RAM do you want to allocate to the server? (in GB)'
     read quanta
     java -jar -Xmx"$quanta"G server.jar nogui
   else
-    echo "Erro: Pasta 'server' nao encontrada. Crie um servidor primeiro (opcao 2)."
+    echo "Error: 'server' folder not found. Create a server first (option 2)."
   fi
 
 elif [ "$resposta" = '2' ]; then
   clear
-  echo Qual tipo de minecraft voce quer usar?
+  echo "Which Minecraft type do you want to use?"
   echo
-  echo "1 - Paper (plugin) (1.21.6)"
+  echo "1 - Paper (plugins) (1.21.6)"
   echo "2 - Vanilla (1.21.6)"
   read versao
 
@@ -42,7 +42,7 @@ elif [ "$resposta" = '2' ]; then
     java -jar server.jar
     sed -i 's/eula=false/eula=true/g' eula.txt
     clear
-    echo 'Quanta RAM voce quer alocar para o servidor? (em GB)'
+    echo 'How much RAM do you want to allocate to the server? (in GB)'
     echo
     read ram
     java -jar -Xmx"$ram"G server.jar nogui
@@ -54,78 +54,78 @@ elif [ "$resposta" = '2' ]; then
     java -jar server.jar
     sed -i 's/eula=false/eula=true/g' eula.txt
     clear
-    echo 'Quanta RAM voce quer alocar para o servidor? (em GB)'
+    echo 'How much RAM do you want to allocate to the server? (in GB)'
     echo
     read ram
     java -jar -Xmx"$ram"G server.jar nogui
   else
-    echo "Escolha uma opcao valida"
+    echo "Please choose a valid option."
   fi
 
 elif [ "$resposta" = '3' ]; then
   if [ -d "server" ]; then
     cd server
     clear
-    echo O que voce quer gerenciar?
+    echo "What do you want to manage?"
     echo
-    echo "1 - Nome"
-    echo "2 - Chunks renderizadas"
-    echo "3 - Chunks simuladas"
-    echo "4 - Gerenciar plugins"
+    echo "1 - Server name"
+    echo "2 - Rendered chunks"
+    echo "3 - Simulated chunks"
+    echo "4 - Manage plugins"
     read gerenciar
 
     if [ "$gerenciar" = '1' ]; then
       clear
-      echo "Qual nome voce quer que o servidor tenha?"
+      echo "What name do you want for the server?"
       echo
       read nome
       sed -i "s/motd=.*/motd=$nome/" server.properties
-      echo "Nome do servidor alterado para: $nome"
+      echo "Server name changed to: $nome"
 
     elif [ "$gerenciar" = '2' ]; then
       clear
-      echo "Quantas chunks voce quer que o servidor renderize para todos?"
+      echo "How many chunks should the server render for players?"
       echo
       read render
       sed -i "s/view-distance=.*/view-distance=$render/" server.properties
-      echo "Distancia de renderizacao alterada para $render"
+      echo "Render distance set to $render"
 
     elif [ "$gerenciar" = '3' ]; then
       clear
-      echo "Quantas chunks voce quer que o servidor simule?"
+      echo "How many chunks should the server simulate?"
       echo
       read simula
       sed -i "s/simulation-distance=.*/simulation-distance=$simula/" server.properties
-      echo "Distancia de simulacao alterada para $simula"
+      echo "Simulation distance set to $simula"
 
     elif [ "$gerenciar" = '4' ]; then
       clear
-      echo O que voce gostaria de fazer?
+      echo "What would you like to do?"
       echo
-      echo "1 - Instalar plugins"
-      echo "2 - Remover plugins"
+      echo "1 - Install plugins"
+      echo "2 - Remove plugins"
       read plugop
 
       if [ "$plugop" = '1' ]; then
         ./plugins.sh
       elif [ "$plugop" = '2' ]; then
-        echo "Esses sao os plugins instalados, escreva o nome do arquivo .jar do plugin para deleta-lo."
+        echo "These are the installed plugins. Enter the .jar filename to delete it."
         cd plugins
         ls
         read deletar
         rm "$deletar"
       else
-        echo "Digite algo valido!"
+        echo "Please enter a valid option!"
       fi
     else
-      echo "Opcao invalida!"
+      echo "Invalid option!"
     fi
   else
-    echo "Erro: Pasta 'server' nao encontrada. Crie um servidor primeiro (opcao 2)."
+    echo "Error: 'server' folder not found. Create a server first (option 2)."
   fi
 
 elif [ "$resposta" = '4' ]; then
   exit
 else
-  echo 'Por favor, responda algo de 1 a 4'
+  echo 'Please choose an option between 1 and 4.'
 fi
