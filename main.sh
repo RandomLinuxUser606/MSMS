@@ -138,9 +138,7 @@ elif [ "$resposta" = '3' ]; then
 
 elif [ "$resposta" = '4' ]; then
   clear
-  echo "CPU: $(mpstat 1 1 | awk '/Average:/ {print 100 - $NF"%"}')"
-  echo "RAM: $(free | awk '/Mem:/ {printf "%.1f%%", ($3/$2)*100}')"
-  echo "Temp CPU: $(sensors | awk '/Package id 0:/ {print $4}')"
+
   watch -n 1 "./stats.sh"
 elif [ "$resposta" = '5' ]; then
   exit
