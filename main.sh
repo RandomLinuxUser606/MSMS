@@ -1,13 +1,6 @@
 #!/bin/bash
-<<<<<<< HEAD
 # By RandomLinuxUser606, version 0.1.
-
-echo "MSMS - v0.1"
-=======
-# By RandomLinuxUser606, version 0.1
-
 echo "MSMS - Version 0.1"
->>>>>>> main
 echo "A CLI and open-source utility to simplify creating"
 echo "and managing a Minecraft server."
 echo
@@ -18,7 +11,8 @@ echo "Options (1-4):"
 echo "1 - Start server"
 echo "2 - Create server"
 echo "3 - Manage server"
-echo "4 - Exit"
+echo "4 - Computer usage"
+echo "5 - Exit"
 read resposta
 
 if [ "$resposta" = '1' ]; then
@@ -143,7 +137,11 @@ elif [ "$resposta" = '3' ]; then
   fi
 
 elif [ "$resposta" = '4' ]; then
+  clear
+  echo "CPU: $(mpstat 1 1 | awk '/Average:/ {print 100 - $NF"%"}')"
+  echo "RAM: $(free | awk '/Mem:/ {printf "%.1f%%", ($3/$2)*100}')"
+  echo "Temp CPU: $(sensors | awk '/Package id 0:/ {print $4}')"
+  watch -n 1 "./stats.sh"
+elif [ "$resposta" = '5' ]; then
   exit
-else
-  echo 'Please choose an option between 1 and 4.'
 fi
