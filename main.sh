@@ -68,11 +68,15 @@ elif [ "$resposta" = '3' ]; then
     clear
     echo "What do you want to manage?"
     echo
+    echo "Name and icon"
     echo "1 - Server name"
-    echo "2 - Rendered chunks"
-    echo "3 - Simulated chunks"
-    echo "4 - Manage plugins"
-    echo "5 - Max player count"
+    echo "2 - Server icon"
+    echo "Performance & plugins"
+    echo "3 - Rendered chunks"
+    echo "4 - Simulated chunks"
+    echo "5 - Manage plugins"
+
+    echo "6 - Max player count"
     read gerenciar
 
     if [ "$gerenciar" = '1' ]; then
@@ -83,7 +87,7 @@ elif [ "$resposta" = '3' ]; then
       sed -i "s/motd=.*/motd=$nome/" server.properties
       echo "Server name changed to: $nome"
 
-    elif [ "$gerenciar" = '2' ]; then
+    elif [ "$gerenciar" = '3' ]; then
       clear
       echo "How many chunks should the server render for players?"
       echo
@@ -91,7 +95,7 @@ elif [ "$resposta" = '3' ]; then
       sed -i "s/view-distance=.*/view-distance=$render/" server.properties
       echo "Render distance set to $render"
 
-    elif [ "$gerenciar" = '3' ]; then
+    elif [ "$gerenciar" = '4' ]; then
       clear
       echo "How many chunks should the server simulate?"
       echo
@@ -99,7 +103,7 @@ elif [ "$resposta" = '3' ]; then
       sed -i "s/simulation-distance=.*/simulation-distance=$simula/" server.properties
       echo "Simulation distance set to $simula"
 
-    elif [ "$gerenciar" = '4' ]; then
+    elif [ "$gerenciar" = '5' ]; then
       clear
       echo "What would you like to do?"
       echo
