@@ -64,7 +64,6 @@ elif [ "$resposta" = '2' ]; then
 
 elif [ "$resposta" = '3' ]; then
   if [ -d "server" ]; then
-    cd server
     clear
     echo "What do you want to manage?"
     echo
@@ -75,7 +74,6 @@ elif [ "$resposta" = '3' ]; then
     echo "3 - Rendered chunks"
     echo "4 - Simulated chunks"
     echo "5 - Manage plugins"
-
     echo "6 - Max player count"
     read gerenciar
 
@@ -84,8 +82,15 @@ elif [ "$resposta" = '3' ]; then
       echo "What name do you want for the server?"
       echo
       read nome
-      sed -i "s/motd=.*/motd=$nome/" server.properties
+      sed -i "s/motd=.*/motd=$nome/" server/server.properties
       echo "Server name changed to: $nome"
+    elif [ "$gerenciar" = '2' ]; then
+      clear
+      echo "What is the path of the image? Do not use tilde expansion paths."
+      echo "Note: The image must be 64x64 in size."
+      read icone
+      mv "$icone" server-icon.png
+      mv server-icon.png server/
 
     elif [ "$gerenciar" = '3' ]; then
       clear
@@ -129,7 +134,7 @@ elif [ "$resposta" = '3' ]; then
         echo "Please enter a valid option!"
       fi
 
-    elif [ "$gerenciar" = '5' ]; then
+    elif [ "$gerenciar" = '6' ]; then
       echo "What limit do you want?"
       read limite
       sed -i "s/max-players=.*/max-players=$limite/" server.properties
