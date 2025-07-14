@@ -22,6 +22,7 @@ A CLI and open-source utility made to make it easier to create Minecraft servers
 - Linux
 - Java 21
 - wget installed
+- mpstat
 
 ### Steps:
 1 - Install packages (if needed)
