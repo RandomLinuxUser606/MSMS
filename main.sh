@@ -147,8 +147,10 @@ elif [ "$resposta" = '3' ]; then
 
 elif [ "$resposta" = '4' ]; then
   clear
-
-  watch -n 1 "./stats.sh"
+  watch -n 1 '
+  echo "CPU: $(mpstat 1 1 | awk '\''/Average:/ {print 100 - $NF "%"}'\'')"
+  echo "RAM: $(free | awk '\''/Mem:/ {printf "%.1f%%", ($3/$2)*100}'\'')"
+  echo "Temp. CPU:" sensors | grep "temp1" || sensors | grep "Core 0" || sensors | grep "package id 0" '
 elif [ "$resposta" = '5' ]; then
   exit
 fi
