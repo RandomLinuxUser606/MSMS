@@ -75,6 +75,9 @@ elif [ "$resposta" = '3' ]; then
     echo "4 - Simulated chunks"
     echo "5 - Manage plugins"
     echo "6 - Max player count"
+    echo "Game mode"
+    echo "7 - Change gamemode"
+    # Criar, futuramente, "Change difficulty" e "Online mode (on/off)".
     read gerenciar
 
     if [ "$gerenciar" = '1' ]; then
@@ -138,6 +141,19 @@ elif [ "$resposta" = '3' ]; then
       echo "What limit do you want?"
       read limite
       sed -i "s/max-players=.*/max-players=$limite/" server.properties
+    elif [ "$gerenciar" = '7' ]; then
+      echo "Which gamemode do you want?"
+      echo
+      echo "1 - Survival"
+      echo "2 - Creative"
+      read gamemode
+      if [ "$gamemode" = '1' ]; then
+        sed -i "s/gamemode=.*/gamemode=survival/" server/server.properties
+      elif [ "$gamemode" = '2' ]; then
+        sed -i "s/gamemode=.*/gamemode=creative/" server/server.properties
+      else
+        echo "Please enter a valid option!"
+      fi
     else
       echo "Invalid option!"
     fi
