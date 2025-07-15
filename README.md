@@ -61,4 +61,7 @@ A CLI and open-source utility made to make it easier to create Minecraft servers
 
 ![2025-06-29-192219_hyprshot](https://github.com/user-attachments/assets/5bb5bb17-a4fb-4553-9bca-203998231440)
 
+## License  
+This project is licensed under the **GNU General Public License v3 (GPLv3)**.  
+See [LICENSE](LICENSE) for the full text.  
 
