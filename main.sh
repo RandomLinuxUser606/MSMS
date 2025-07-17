@@ -1,18 +1,18 @@
 #!/bin/bash
-# Copyright (C) 2025 RandomLinuxUser606 <davizinedicao@protonmail.com>  
-# 
-# This program is free software: you can redistribute it and/or modify  
-# it under the terms of the GNU General Public License as published by  
-# the Free Software Foundation, either version 3 of the License, or  
-# any later version.  
-#  
-# This program is distributed in the hope that it will be useful,  
-# but WITHOUT ANY WARRANTY; without even the implied warranty of  
-# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the  
-# GNU General Public License for more details.  
-#  
-# You should have received a copy of the GNU General Public License  
-# along with this program. If not, see <https://www.gnu.org/licenses/>.  
+# Copyright (C) 2025 RandomLinuxUser606 <davizinedicao@protonmail.com>
+#
+# This program is free software: you can redistribute it and/or modify
+# it under the terms of the GNU General Public License as published by
+# the Free Software Foundation, either version 3 of the License, or
+# any later version.
+#
+# This program is distributed in the hope that it will be useful,
+# but WITHOUT ANY WARRANTY; without even the implied warranty of
+# MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE. See the
+# GNU General Public License for more details.
+#
+# You should have received a copy of the GNU General Public License
+# along with this program. If not, see <https://www.gnu.org/licenses/>.
 echo "MSMS - Version 0.1"
 echo "A CLI and open-source utility to simplify creating"
 echo "and managing a Minecraft server."
@@ -42,15 +42,15 @@ elif [ "$resposta" = '2' ]; then
   clear
   echo "Which Minecraft type do you want to use?"
   echo
-  echo "1 - Paper (plugins) (1.21.6)"
-  echo "2 - Vanilla (1.21.6)"
+  echo "1 - Paper (plugins) (1.21.7)"
+  echo "2 - Vanilla (1.21.7)"
   read versao
 
   if [[ "$versao" = '1' ]]; then
     mkdir -p server
     cd server
-    wget https://fill-data.papermc.io/v1/objects/bfca155b4a6b45644bfc1766f4e02a83c736e45fcc060e8788c71d6e7b3d56f6/paper-1.21.6-46.jar
-    mv paper-1.21.6-46.jar server.jar
+    wget https://fill-data.papermc.io/v1/objects/83838188699cb2837e55b890fb1a1d39ad0710285ed633fbf9fc14e9f47ce078/paper-1.21.7-32.jar
+    mv paper-1.21.7-32.jar server.jar
 
     java -jar server.jar
     sed -i 's/eula=false/eula=true/g' eula.txt
@@ -63,7 +63,7 @@ elif [ "$resposta" = '2' ]; then
   elif [ "$versao" = '2' ]; then
     mkdir -p server
     cd server
-    wget https://piston-data.mojang.com/v1/objects/6e64dcabba3c01a7271b4fa6bd898483b794c59b/server.jar
+    wget https://piston-data.mojang.com/v1/objects/05e4b48fbc01f0385adb74bcff9751d34552486c/server.jar
     java -jar server.jar
     sed -i 's/eula=false/eula=true/g' eula.txt
     clear
